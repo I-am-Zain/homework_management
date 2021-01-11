@@ -9,6 +9,7 @@ import 'package:homework/reFactor/HeadingData.dart';
 
 import 'package:homework/reFactor/backGroundimage.dart';
 import 'package:homework/reFactor/backgroundcolor.dart';
+import 'package:homework/reFactor/logout_.dart';
 
 import '../constants.dart';
 
@@ -89,71 +90,9 @@ class historyOfTeachers extends StatelessWidget {
             text: Text("Teacher History", style: txtColor,
             ),//admin login txt
           ),
-
-
-
-          Pinned.fromSize(
-            bounds: Rect.fromLTWH(175.0, 742.0, 163.0, 50.0),
-            size: Size(375.0, 812.0),
-            pinRight: true,
-            pinBottom: true,
-            fixedWidth: true,
-            fixedHeight: true,
-            child: FlatButton(
-              onPressed: (){
-                auth.signOut().then((user) =>Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => homeWorkMain(),
-                  ),) );//navigator link);
-
-
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(29.0),
-                  color: const Color(0xffe2bfbf),
-                  border: Border.all(width: 1.0, color: const Color(0xff707070)),
-                ),
-              ),
-            ),
-          ),//logout buton
-          Pinned.fromSize(
-            bounds: Rect.fromLTWH(280.0, 751.0, 40.0, 40.0),
-            size: Size(375.0, 812.0),
-            pinRight: true,
-            pinBottom: true,
-            fixedWidth: true,
-            fixedHeight: true,
-            child:
-            // Adobe XD layer: 'log-out' (shape)
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: const AssetImage('assets/logout.png'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ),//logout icon
-          Pinned.fromSize(
-            bounds: Rect.fromLTWH(194.0, 753.0, 70.0, 29.0),
-            size: Size(375.0, 812.0),
-            pinBottom: true,
-            fixedWidth: true,
-            fixedHeight: true,
-            child: Text(
-              'Logout',
-              style: TextStyle(
-                fontFamily: 'Perpetua',
-                fontSize: 26,
-                color: const Color(0xff010103),
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w700,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),//logout txt
+          logoutShape(),
+          logout_Icon(),
+          logout_text(),
         ],
       ),
     );
